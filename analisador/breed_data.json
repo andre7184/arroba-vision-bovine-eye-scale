@@ -1,0 +1,16 @@
+{
+  "nelore": {
+    "nome_exibicao": "Nelore",
+    "bezerro_ratio_max": 950,
+    "adulto_ratio_min": 1050,
+    "k_factor_bezerro": 0.45,
+    "k_factor_adulto": 0.60
+  },
+  "angus": {
+    "nome_exibicao": "Angus",
+    "bezerro_ratio_max": 900,
+    "adulto_ratio_min": 1000,
+    "k_factor_bezerro": 0.50,
+    "k_factor_adulto": 0.65
+  }
+}

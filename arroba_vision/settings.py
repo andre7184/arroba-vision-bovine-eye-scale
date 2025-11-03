@@ -121,3 +121,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Em nome_do_projeto/settings.py
+
+# --- Configurações da API Roboflow ---
+# [TASK-002] Credenciais para o modelo de Visão Computacional
+# Substitua os valores abaixo com os dados do SEU projeto no Roboflow
+
+ROBOFLOW_API_KEY = "40JHlc0buAnPmlss1RFw"
+ROBOFLOW_MODEL_ID = "detector-olho-boi-60lbn/2"  # Verifique se este é o ID correto do seu modelo
+ROBOFLOW_API_URL = "https://detect.roboflow.com/"
