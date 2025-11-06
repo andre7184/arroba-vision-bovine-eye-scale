@@ -1,0 +1,47 @@
+{% extends "analisador/base.html" %}
+
+{% block title %}Resultado da Análise{% endblock %}
+
+{% block content %}
+
+{% if error %}
+
+    <div style="max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #dc3545; background-color: #f8d7da; color: #721c24; border-radius: 8px;">
+        <h2 style="text-align: center; color: #721c24;">Falha na Análise</h2>
+        <p style="text-align: center; font-size: 1.1em;">{{ error }}</p>
+        <hr style="margin: 20px 0; border-color: #f5c6cb;">
+        <p style="text-align: center;">Por favor, tente novamente com uma imagem diferente. Certifique-se de que o animal (e seus olhos) esteja visível.</p>
+    </div>
+
+{% else %}
+
+    <div style="max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); background-color: #fff;">
+
+        <h2 style="text-align: center; color: #28a745;">Análise Concluída com Sucesso!</h2>
+
+        <div style="background-color: #e6f7ff; border: 1px solid #b3e0ff; padding: 15px; border-radius: 5px; text-align: center; margin: 20px 0;">
+            <h3 style="margin: 0 0 10px 0; color: #0056b3;">Peso Estimado:</h3>
+            <p style="font-size: 2.5em; font-weight: bold; color: #004085; margin: 0;">{{ peso_estimado }} kg</p>
+        </div>
+
+        <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px;">Detalhes da Estimativa</h3>
+
+        <p><strong>Idade Estimada:</strong> {{ idade_estimada }}</p>
+        <p><strong>Proporção (Corpo/Olho):</strong> {{ proporcao }}</p>
+
+        <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 25px;">Dados da Detecção (IA)</h3>
+
+        <p><strong>Confiança (Corpo):</strong> {{ confidence_corpo }}%</p>
+        <p><strong>Confiança (Olho):</strong> {{ confidence_olho }}%</p>
+
+    </div>
+
+{% endif %}
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{% url 'analisador:analise_upload' %}" style="...">
+        Analisar Outra Imagem
+    </a>
+</div>
+
+{% endblock %}
